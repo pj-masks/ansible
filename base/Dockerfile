@@ -1,7 +1,9 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y openssh-server python-pip \
-      && rm -rf /var/lib/apt/lists/*
+      && apt-get install net-tools && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get -y install sudo
 
 # Install python package
 RUN pip install --upgrade pip==9.0.3 && pip install netaddr deepdiff

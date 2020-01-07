@@ -22,12 +22,14 @@ services:
     stdin_open: true
     tty: true
     restart: always
+    hostname: app01
 
   app02:
     build: ./base
     stdin_open: true
     tty: true
     restart: always
+    hostname: app02
 
   db01:
     build: ./base
