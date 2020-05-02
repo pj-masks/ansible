@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:bionic
 
 RUN apt-get update && apt-get install -y openssh-server python-pip \
       && apt-get install net-tools && rm -rf /var/lib/apt/lists/*

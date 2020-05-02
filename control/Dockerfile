@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM ubuntu:latest
+FROM ubuntu:bionic
 
 # Install python
 RUN apt-get update && apt-get install software-properties-common -y \
