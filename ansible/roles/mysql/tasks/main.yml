@@ -7,7 +7,6 @@
       - python-mysqldb
       - iproute2
     state: present
-    update_cache: yes
 
 - name: ensure mysql listening on all ports
   lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address

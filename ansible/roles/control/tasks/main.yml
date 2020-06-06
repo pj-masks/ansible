@@ -7,4 +7,3 @@
       - python-httplib2
       - vim
     state: present
-    update_cache: yes
