@@ -7,17 +7,22 @@
       - python-mysqldb
       - iproute2
     state: present
+  tags: [ 'packages' ]
 
 - name: ensure mysql listening on all ports
   lineinfile: dest=/etc/mysql/mysql.conf.d/mysqld.cnf regexp=^bind-address
               line="bind-address = {{ ansible_eth0.ipv4.address }}"
   notify: restart mysql
+  tags: [ 'configure' ]
 
 - name: ensure mysql started
   shell: service mysql start
+  tags: [ 'service' ]
 
 - name: create database
   mysql_db: name={{ db_name }} state=present
+  tags: [ 'configure' ]
 
 - name: create demo user
   mysql_user: name={{ db_user_name }} password={{ db_user_pass }} priv={{ db_name }}.*:ALL host='{{ db_user_host }}' state=present
+  tags: [ 'configure' ]

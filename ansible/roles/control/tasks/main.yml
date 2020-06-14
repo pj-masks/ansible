@@ -7,3 +7,4 @@
       - python-httplib2
       - vim
     state: present
+  tags: [ 'packages' ]
